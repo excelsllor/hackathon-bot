@@ -1,0 +1,111 @@
+sources:
+  - code: fsp_lipetsk
+    name: "ФСП Липецк"
+    kind: fsp_calendar
+    url: "https://fsp-russia.ru/calendar/"
+    enabled: true
+    interval_minutes: 360
+    priority: 6
+    geo: ru
+    region: lipetsk
+    language: ru
+    online_only: false
+    options:
+      require_lipetsk: true
+
+  - code: school21_lipetsk
+    name: "Школа 21 Липецк"
+    kind: telegram_public
+    url: "https://t.me/s/cifra_48"
+    enabled: true
+    interval_minutes: 360
+    priority: 6
+    geo: ru
+    region: lipetsk
+    language: ru
+    online_only: false
+    options:
+      require_dates: true
+
+  - code: devpost
+    name: "Devpost"
+    kind: devpost_api
+    url: "https://devpost.com/api/hackathons"
+    enabled: true
+    interval_minutes: 180
+    priority: 10
+    geo: intl
+    language: en
+    online_only: true
+    options:
+      pages: 8
+
+  - code: devfolio
+    name: "Devfolio"
+    kind: devfolio_html
+    url: "https://devfolio.co/hackathons"
+    enabled: true
+    interval_minutes: 240
+    priority: 20
+    geo: intl
+    language: en
+    online_only: true
+
+  - code: codenrock
+    name: "Codenrock"
+    kind: codenrock_api
+    url: "https://codenrock.com/api/contests?take=100"
+    enabled: true
+    interval_minutes: 180
+    priority: 15
+    geo: ru
+    language: ru
+    online_only: false
+
+  - code: ods
+    name: "ODS.ai"
+    kind: ods_html
+    url: "https://ods.ai/competitions"
+    enabled: true
+    interval_minutes: 180
+    priority: 10
+    geo: ru
+    language: ru
+    online_only: false
+
+  - code: tg_hackathons
+    name: "Telegram / Хакатоны"
+    kind: telegram_public
+    url: "https://t.me/s/hackathons"
+    enabled: true
+    interval_minutes: 240
+    priority: 30
+    geo: ru
+    language: ru
+    online_only: false
+    options:
+      require_dates: true
+
+  # MLH сейчас проводит только офлайн-события; для участия из РФ бесполезно.
+  - code: mlh
+    name: "MLH"
+    kind: mlh_html
+    url: "https://www.mlh.com/seasons/2027/events"
+    enabled: false
+    interval_minutes: 720
+    priority: 40
+    geo: intl
+    language: en
+    online_only: true
+
+  # Контесты, не хакатоны. Включать при желании.
+  - code: codeforces
+    name: "Codeforces"
+    kind: codeforces_api
+    url: "https://codeforces.com/api/contest.list"
+    enabled: false
+    interval_minutes: 360
+    priority: 50
+    geo: intl
+    language: en
+    online_only: true

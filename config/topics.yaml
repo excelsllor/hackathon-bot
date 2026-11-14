@@ -1,0 +1,394 @@
+# Порядок тем задаёт биты в callback-данных. Не меняй порядок без миграции.
+topics:
+  - id: ai
+    title: "ИИ/ML"
+    emoji: "🤖"
+    keywords_ru:
+      - "искусственн* интеллект"
+      - "нейросет*"
+      - "нейронн* сет*"
+      - "машинн* обучен*"
+      - "глубок* обучен*"
+      - "генеративн* ии"
+      - "генеративн* искусственн*"
+      - "больш* языков* модел*"
+      - "языков* модел*"
+      - "компьютерн* зрен*"
+      - "обработк* естественн* язык*"
+      - "распознаван* образ*"
+      - "рекомендательн* систем*"
+      - "ии"
+      - "llm"
+      - "gpt"
+      - "genai"
+      - "ml"
+      - "ai"
+      - "nlp"
+    keywords_en:
+      - "artificial intelligence"
+      - "machine learning"
+      - "deep learning"
+      - "neural network"
+      - "generative ai"
+      - "large language model"
+      - "computer vision"
+      - "natural language processing"
+      - "llm"
+      - "gpt"
+      - "genai"
+      - "ml"
+      - "ai"
+      - "nlp"
+    negative:
+      - "game theory"
+      - "теория игр"
+
+  - id: ds
+    title: "Data Science"
+    emoji: "📊"
+    keywords_ru:
+      - "data science"
+      - "анализ данных"
+      - "аналитик* данных"
+      - "датасет*"
+      - "дата-сет*"
+      - "соревнован* по данным"
+      - "рекомендательн* систем*"
+      - "recsys"
+      - "predictions"
+    keywords_en:
+      - "data science"
+      - "data analysis"
+      - "dataset"
+      - "analytics"
+      - "predictions"
+      - "recommendation system"
+      - "recsys"
+    negative: []
+
+  - id: web
+    title: "Web/Backend"
+    emoji: "🌐"
+    keywords_ru:
+      - "веб*"
+      - "веб-разработ*"
+      - "веб-приложен*"
+      - "фронтенд*"
+      - "бэкенд*"
+      - "фулстек*"
+      - "сайт*"
+      - "javascript"
+      - "typescript"
+      - "react"
+      - "node.js"
+      - "django"
+      - "fastapi"
+      - "php"
+      - "html"
+      - "css"
+      - "api"
+    keywords_en:
+      - "web"
+      - "web development"
+      - "frontend"
+      - "backend"
+      - "fullstack"
+      - "full-stack"
+      - "javascript"
+      - "typescript"
+      - "react"
+      - "node.js"
+      - "django"
+      - "fastapi"
+      - "php"
+      - "html"
+      - "css"
+      - "api"
+    negative: []
+
+  - id: mobile
+    title: "Mobile"
+    emoji: "📱"
+    keywords_ru:
+      - "мобильн* разработ*"
+      - "мобильн* приложен*"
+      - "android"
+      - "ios"
+      - "flutter"
+      - "react native"
+      - "kotlin"
+      - "swift"
+    keywords_en:
+      - "mobile development"
+      - "mobile app"
+      - "android"
+      - "ios"
+      - "flutter"
+      - "react native"
+      - "kotlin"
+      - "swift"
+    negative: []
+
+  - id: devops
+    title: "DevOps/Cloud"
+    emoji: "☁️"
+    keywords_ru:
+      - "devops"
+      - "kubernetes"
+      - "k8s"
+      - "docker"
+      - "облачн*"
+      - "облак*"
+      - "инфраструктур*"
+      - "ci/cd"
+      - "terraform"
+      - "serverless"
+    keywords_en:
+      - "devops"
+      - "kubernetes"
+      - "k8s"
+      - "docker"
+      - "cloud"
+      - "infrastructure"
+      - "ci/cd"
+      - "terraform"
+      - "serverless"
+      - "sre"
+    negative: []
+
+  - id: sec
+    title: "Кибербезопасность"
+    emoji: "🛡️"
+    keywords_ru:
+      - "кибербезопасн*"
+      - "информационн* безопасн*"
+      - "безопасн* приложен*"
+      - "уязвим*"
+      - "криптограф*"
+      - "ctf"
+      - "pentest"
+      - "infosec"
+    keywords_en:
+      - "cybersecurity"
+      - "cyber security"
+      - "information security"
+      - "application security"
+      - "vulnerability"
+      - "cryptography"
+      - "ctf"
+      - "pentest"
+      - "infosec"
+      - "bug bounty"
+    negative: []
+
+  - id: chain
+    title: "Blockchain/Web3"
+    emoji: "⛓️"
+    keywords_ru:
+      - "блокчейн*"
+      - "web3"
+      - "смарт-контракт*"
+      - "смарт контракт*"
+      - "ethereum"
+      - "solidity"
+      - "defi"
+      - "nft"
+      - "криптовалют*"
+    keywords_en:
+      - "blockchain"
+      - "web3"
+      - "smart contract"
+      - "ethereum"
+      - "solidity"
+      - "defi"
+      - "nft"
+      - "crypto"
+    negative: []
+
+  - id: game
+    title: "GameDev"
+    emoji: "🎮"
+    keywords_ru:
+      - "разработк* игр"
+      - "3d-игр*"
+      - "создан* игр*"
+      - "геймдев*"
+      - "game jam"
+      - "геймджем*"
+      - "unity"
+      - "unreal"
+      - "godot"
+      - "игров* движ*"
+      - "видеоигр*"
+      - "gamedev"
+    keywords_en:
+      - "game development"
+      - "gamedev"
+      - "game jam"
+      - "unity"
+      - "unreal"
+      - "godot"
+      - "video game"
+      - "gaming"
+    negative:
+      - "game theory"
+      - "gamification"
+
+  - id: embed
+    title: "Embedded/IoT"
+    emoji: "🔌"
+    keywords_ru:
+      - "встраиваем* систем*"
+      - "интернет вещей"
+      - "iot"
+      - "робототехник*"
+      - "робот*"
+      - "arduino"
+      - "raspberry pi"
+      - "микроконтроллер*"
+      - "железо"
+      - "embedded"
+    keywords_en:
+      - "embedded"
+      - "internet of things"
+      - "iot"
+      - "robotics"
+      - "robot"
+      - "arduino"
+      - "raspberry pi"
+      - "microcontroller"
+      - "hardware"
+    negative: []
+
+  - id: qa
+    title: "QA/Тестирование"
+    emoji: "🧪"
+    keywords_ru:
+      - "тестирован*"
+      - "автотест*"
+      - "quality assurance"
+      - "selenium"
+      - "playwright"
+      - "qa"
+    keywords_en:
+      - "software testing"
+      - "test automation"
+      - "quality assurance"
+      - "selenium"
+      - "playwright"
+      - "qa"
+    negative:
+      - "q&a"
+
+  - id: oss
+    title: "Open Source/Open Data"
+    emoji: "🔓"
+    keywords_ru:
+      - "open source"
+      - "опенсорс*"
+      - "открыт* исходн* код*"
+      - "открыт* данн*"
+      - "open data"
+      - "github"
+    keywords_en:
+      - "open source"
+      - "opensource"
+      - "open data"
+      - "github"
+    negative: []
+
+  - id: arvr
+    title: "AR/VR"
+    emoji: "🥽"
+    keywords_ru:
+      - "дополненн* реальност*"
+      - "виртуальн* реальност*"
+      - "смешанн* реальност*"
+      - "метавселенн*"
+      - "ar/vr"
+      - "xr"
+      - "vr"
+      - "ar"
+    keywords_en:
+      - "augmented reality"
+      - "virtual reality"
+      - "mixed reality"
+      - "metaverse"
+      - "ar/vr"
+      - "xr"
+      - "vr"
+      - "ar"
+    negative: []
+
+  - id: it
+    title: "IT-general"
+    emoji: "💻"
+    keywords_ru:
+      - "хакатон*"
+      - "чемпионат*"
+      - "соревнован*"
+      - "конкурс*"
+      - "программирован*"
+      - "разработ*"
+      - "айти"
+      - "ит-*"
+      - "it-*"
+      - "информационн* технологи*"
+      - "цифров*"
+    keywords_en:
+      - "hackathon"
+      - "hack"
+      - "jam"
+      - "challenge"
+      - "contest"
+      - "competition"
+      - "programming"
+      - "software"
+      - "developer"
+      - "tech"
+      - "digital"
+    negative: []
+
+tag_map:
+  "machine learning/ai": ai
+  "ml_ai": ai
+  "artificial intelligence": ai
+  "ai": ai
+  "ml": ai
+  "web": web
+  "mobile": mobile
+  "blockchain": chain
+  "web3": chain
+  "gaming": game
+  "game": game
+  "gamedev": game
+  "iot": embed
+  "hardware": embed
+  "robotics": embed
+  "ar/vr": arvr
+  "xr": arvr
+  "vr": arvr
+  "ar": arvr
+  "cybersecurity": sec
+  "security": sec
+  "ctf": sec
+  "devops": devops
+  "cloud": devops
+  "data science": ds
+  "analytics": ds
+  "open ended": it
+  "beginner friendly": it
+  "low/no code": it
+  "design": it
+  "healthtech": it
+  "fintech": it
+  "enterprise": it
+  "productivity": it
+  "lifehacks": it
+  "no restrictions": it
+  "hackathon": it
+  "remote": it
+  "sport_programming": it
+  "olympiad": it
+  "algorithm": it
+  "case": it

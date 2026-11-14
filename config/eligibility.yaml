@@ -1,0 +1,32 @@
+# Явные запреты: такие события скрываем.
+restricted_patterns:
+  - '(?i)\b(not|isn.t|aren.t|not open|ineligible|excluded?|prohibited)\b.{0,120}\b(russia|russian federation|belarus)\b'
+  - '(?i)\b(russia|russian federation|belarus)\b.{0,120}\b(not eligible|ineligible|excluded?|prohibited|not open)\b'
+  - '(?i)\b(us|u\.s\.|usa|united states|india|china|pakistan|bangladesh|nigeria|kenya|brazil)\s+(only|residents? only)\b'
+  - '(?i)\bopen (only )?to (residents?|citizens?) of\s+(?!russia|russian federation|worldwide|all countries|any country|every country)[a-z][a-z ,.-]{2,70}'
+  - '(?i)\b(invite[- ]only|by invitation only|invitation only)\b'
+  - '(?i)\b(students? (of|at|from) [a-z][a-z .-]{2,70}(university|college|institute)|university students only)\b'
+  # Хакатоны только для школьников.
+  - '(?i)\bдля\s+школьник'
+  - '(?i)\bшкольник(?:а|ов|ам|ами|ах|и)?\b'
+  - '(?i)\bученик(?:а|ов|ам|ами|ах|и)?\s+(?:[1-9]|1[01])\s*(?:[-–—]|по)?\s*(?:[1-9]|1[01])?\s*класс'
+  - '(?i)\bобучающ(?:иеся|ихся)\s+(?:[1-9]|1[01])\s*(?:[-–—]|по)?\s*(?:[1-9]|1[01])?\s*класс'
+  - '(?i)\bучащ(?:иеся|ихся)\s+(?:[1-9]|1[01])\s*(?:[-–—]|по)?\s*(?:[1-9]|1[01])?\s*класс'
+  - '(?i)\b(?:[1-9]|1[01])\s*[-–—]\s*(?:[1-9]|1[01])\s*класс'
+  - '(?i)\b(?:[1-9]|1[01])\s+класс'
+  - '(?i)\b(high[- ]school|school\s+students?|k-12|grades?\s+[1-9]|middle\s+school)\b'
+
+# Требует проверки правил: показываем с предупреждением, но не скрываем.
+check_patterns:
+  - '(?i)\b(void where prohibited|sanctioned countries|sanctions|embargo)\b'
+  - '(?i)\b(students? only|must be (a )?student|age \d+|18\+)\b'
+  - '(?i)\b(eligibility|eligible|eligibility requirements?)\b'
+
+worldwide_patterns:
+  - '(?i)\b(open to (all|everyone|anyone)|worldwide|global|all countries|any country|every country|no restrictions|international)\b'
+
+online_patterns:
+  - '(?i)\b(online|virtual|remote|digital|hybrid)\b'
+
+offline_patterns:
+  - '(?i)\b(in[- ]person|on[- ]site|offline|physical)\b'

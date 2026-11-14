@@ -1,0 +1,45 @@
+[Unit]
+Description=Hackathon aggregator bot (Telegram + VK)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hackbot
+Group=hackbot
+WorkingDirectory=/var/lib/hackathon-bot
+EnvironmentFile=/etc/hackathon-bot/env
+Environment=PYTHONPATH=/opt/hackathon-bot/current
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONIOENCODING=utf-8
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=TZ=Europe/Moscow
+ExecStart=/opt/hackathon-bot/venv/bin/python -m app.main
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+KillSignal=SIGINT
+UMask=0077
+
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+LockPersonality=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+MemoryMax=512M
+CPUQuota=80%
+TasksMax=128
+ReadWritePaths=/var/lib/hackathon-bot
+
+[Install]
+WantedBy=multi-user.target

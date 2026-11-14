@@ -1,0 +1,12 @@
+[Unit]
+Description=Backup hackathon bot SQLite database
+After=hackathon-bot.service
+ConditionPathExists=/opt/hackathon-bot/current
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/hackathon-bot/current/scripts/backup.py
+EnvironmentFile=/etc/hackathon-bot/env
+User=root
+Group=root
+UMask=0077

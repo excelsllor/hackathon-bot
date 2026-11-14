@@ -1,0 +1,10 @@
+[Unit]
+Description=Health check for hackathon bot
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/hackathon-bot/current/scripts/healthcheck.py
+EnvironmentFile=/etc/hackathon-bot/env
+User=root
+Group=root
+UMask=0077

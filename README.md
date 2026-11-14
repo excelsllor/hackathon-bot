@@ -80,6 +80,29 @@ scripts/         refresh, backup и служебные скрипты
 tests/           unit-тесты
 ```
 
+## Откуда берём события
+
+Сейчас в `config/sources.yaml` подключены:
+
+| Источник | Тип | URL | Статус | Что берём |
+| --- | --- | --- | --- | --- |
+| Devpost | `devpost_api` | `https://devpost.com/api/hackathons` | включён | международные онлайн-хакатоны |
+| Devfolio | `devfolio_html` | `https://devfolio.co/hackathons` | включён | международные онлайн-хакатоны |
+| Codenrock | `codenrock_api` | `https://codenrock.com/api/contests?take=100` | включён | хакатоны, challenge, CTF, ML/AI и спортивное программирование |
+| ODS.ai | `ods_html` | `https://ods.ai/competitions` | включён | ML/AI-соревнования |
+| Telegram / Хакатоны | `telegram_public` | `https://t.me/s/hackathons` | включён | публикации с датами |
+| ФСП Липецк | `fsp_calendar` | `https://fsp-russia.ru/calendar/` | включён | события ФСП с фильтром по Липецкой области |
+| Школа 21 Липецк | `telegram_public` | `https://t.me/s/cifra_48` | включён | события липецкого кампуса |
+
+Дополнительно настроены, но сейчас выключены:
+
+| Источник | Тип | URL | Почему выключен |
+| --- | --- | --- | --- |
+| MLH | `mlh_html` | `https://www.mlh.com/seasons/2027/events` | сезонные офлайн-события, недоступные из РФ |
+| Codeforces | `codeforces_api` | `https://codeforces.com/api/contest.list` | это контесты, а не хакатоны |
+
+В коде также остаётся адаптер `habr_rss`, но источник Habr сейчас не подключён. Challenge-события Codenrock поддерживаются типом `challenge`; отдельный источник для сторонней платформы Challenge не добавлен.
+
 ## Как работают источники
 
 Каждый источник описывается в `config/sources.yaml` и использует один из адаптеров в `app/sources/`.

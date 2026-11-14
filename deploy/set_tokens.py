@@ -15,9 +15,9 @@ from pathlib import Path
 
 import paramiko
 
-HOST = os.getenv("VPS_HOST", "92.242.164.222")
+HOST = os.getenv("VPS_HOST", "").strip()
 USER = os.getenv("VPS_USER", "root")
-KEY_PATH = Path(os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "hackathon_bot_ed25519")))
+KEY_PATH = Path(os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "id_ed25519")))
 ENV_PATH = "/etc/hackathon-bot/env"
 UPDATABLE = (
     "TG_TOKEN",
@@ -91,6 +91,9 @@ def validate_vk(token: str, group_id: str) -> bool:
 
 
 def main() -> int:
+    if not HOST:
+        print("VPS_HOST is not set", file=sys.stderr)
+        return 1
     updates = {key: os.getenv(key, "").strip() for key in UPDATABLE}
     updates = {key: value for key, value in updates.items() if value}
     if not updates:

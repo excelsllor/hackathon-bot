@@ -12,9 +12,12 @@ import httpx
 
 def main() -> int:
     token = os.getenv("VK_TOKEN", "").strip()
-    peer_id = os.getenv("VK_PEER_ID", "275613114").strip()
+    peer_id = os.getenv("VK_PEER_ID", "").strip()
     if not token:
         print("VK_TOKEN is not set", file=sys.stderr)
+        return 1
+    if not peer_id:
+        print("VK_PEER_ID is not set", file=sys.stderr)
         return 1
 
     keyboard = {

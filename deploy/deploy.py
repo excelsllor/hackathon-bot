@@ -13,9 +13,9 @@ from pathlib import Path
 
 import paramiko
 
-HOST = os.getenv("VPS_HOST", "92.242.164.222")
+HOST = os.getenv("VPS_HOST", "").strip()
 USER = os.getenv("VPS_USER", "root")
-KEY_PATH = Path(os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "hackathon_bot_ed25519")))
+KEY_PATH = Path(os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "id_ed25519")))
 ROOT = Path(__file__).resolve().parents[1]
 STAMP = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 RELEASE = f"/opt/hackathon-bot/releases/{STAMP}"
@@ -86,6 +86,9 @@ def tarball() -> Path:
 
 
 def main() -> int:
+    if not HOST:
+        print("VPS_HOST is not set", file=sys.stderr)
+        return 1
     if not KEY_PATH.exists():
         print("SSH key not found", file=sys.stderr)
         return 1

@@ -11,11 +11,11 @@ from pathlib import Path
 
 import paramiko
 
-HOST = os.getenv("VPS_HOST", "92.242.164.222")
+HOST = os.getenv("VPS_HOST", "").strip()
 USER = os.getenv("VPS_USER", "root")
 PASSWORD = os.getenv("VPS_PASSWORD", "")
 KEY_PATH = Path(
-    os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "hackathon_bot_ed25519"))
+    os.getenv("VPS_KEY", str(Path.home() / ".ssh" / "id_ed25519"))
 )
 PUB_PATH = Path(str(KEY_PATH) + ".pub")
 ROOT = Path(__file__).resolve().parents[1]
@@ -123,9 +123,8 @@ def harden_ssh(client: paramiko.SSHClient) -> None:
     code, out, err = run(client, "cat /etc/ssh/sshd_config")
     config = out if code == 0 else ""
     if "hackathon-bot: disable root password auth" not in config:
-        with client.open_sftp() as sftp:
-            with sftp.open("/etc/ssh/sshd_config", "a") as fh:
-                fh.write(match_block)
+        with client.open_sftp() as sftp, sftp.open("/etc/ssh/sshd_config", "a") as fh:
+            fh.write(match_block)
 
     code, out, err = run(client, "sshd -t")
     if code != 0:
@@ -187,6 +186,9 @@ def rotate_root_password(client: paramiko.SSHClient) -> None:
 
 
 def main() -> int:
+    if not HOST:
+        print("VPS_HOST is not set", file=sys.stderr)
+        return 1
     if not PASSWORD:
         print("VPS_PASSWORD is not set", file=sys.stderr)
         return 1

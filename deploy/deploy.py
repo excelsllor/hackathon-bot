@@ -59,6 +59,7 @@ def tarball() -> Path:
     temp = Path(tempfile.mkdtemp(prefix="hackathon-bot-"))
     archive = temp / f"hackathon-bot-{STAMP}.tar.gz"
     exclude = {
+        ".git",
         ".venv",
         "venv",
         "data",
